@@ -2,3 +2,7 @@
 	path = pepper_virtual
 	url = https://github.com/ros-naoqi/pepper_virtual
 	branch = master
+[submodule "darknet_ros"]
+	path = darknet_ros
+	url = ./darknet_ros/
+	branch = master
