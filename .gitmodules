@@ -26,3 +26,7 @@
 	path = robocup_darknet_gateway
 	url = https://github.com/m0rph03nix/robocup_darknet_gateway
 	branch = master
+[submodule "robocup_pepper-dialogue_hri"]
+	path = robocup_pepper-dialogue_hri
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-dialogue_hri
+	branch = master
