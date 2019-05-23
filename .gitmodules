@@ -22,3 +22,7 @@
 	path = robocup_pepper-HRI-Meta
 	url = https://gitlab.com/Elyspio/robocup_pepper-HRI-Meta
 	branch = master
+[submodule "robocup_darknet_gateway"]
+	path = robocup_darknet_gateway
+	url = https://github.com/m0rph03nix/robocup_darknet_gateway
+	branch = master
