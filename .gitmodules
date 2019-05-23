@@ -10,3 +10,11 @@
 	path = openpose
 	url = https://github.com/CMU-Perceptual-Computing-Lab/openpose
 	branch = master
+[submodule "naoqi_driver"]
+	path = naoqi_driver
+	url = https://github.com/Xia0ben/naoqi_driver
+	branch = master
+[submodule "pepper_robot"]
+	path = pepper_robot
+	url = https://github.com/Xia0ben/pepper_robot
+	branch = master
