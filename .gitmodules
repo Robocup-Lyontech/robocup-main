@@ -8,5 +8,5 @@
 	branch = master
 [submodule "openpose"]
 	path = openpose
-	url = ./openpose/
+	url = https://github.com/CMU-Perceptual-Computing-Lab/openpose
 	branch = master
