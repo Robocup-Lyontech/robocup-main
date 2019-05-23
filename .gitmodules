@@ -18,3 +18,7 @@
 	path = pepper_robot
 	url = https://github.com/Xia0ben/pepper_robot
 	branch = master
+[submodule "robocup_pepper-HRI-Meta"]
+	path = robocup_pepper-HRI-Meta
+	url = https://gitlab.com/Elyspio/robocup_pepper-HRI-Meta
+	branch = master
