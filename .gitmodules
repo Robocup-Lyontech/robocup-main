@@ -30,3 +30,47 @@
 	path = robocup_pepper-dialogue_hri
 	url = https://github.com/jacques-saraydaryan/robocup_pepper-dialogue_hri
 	branch = master
+[submodule "robocup_pepper-general_mng"]
+	path = robocup_pepper-general_mng
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-general_mng
+	branch = master
+[submodule "robocup_pepper-navigation_mng"]
+	path = robocup_pepper-navigation_mng
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-navigation_mng
+	branch = master
+[submodule "robocup_pepper-object_mng"]
+	path = robocup_pepper-object_mng
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-object_mng
+	branch = master
+[submodule "robocup_pepper-people_mng"]
+	path = robocup_pepper-people_mng
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-people_mng
+	branch = master
+[submodule "robocup_pepper-robocup_msgs"]
+	path = robocup_pepper-robocup_msgs
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-robocup_msgs
+	branch = master
+[submodule "robocup_pepper-tts_hri"]
+	path = robocup_pepper-tts_hri
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-tts_hri
+	branch = master
+[submodule "robocup_pepper-world_mng"]
+	path = robocup_pepper-world_mng
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-world_mng
+	branch = master
+[submodule "ros_color_detection"]
+	path = ros_color_detection
+	url = https://github.com/jacques-saraydaryan/ros_color_detection
+	branch = master
+[submodule "ros_face_recognition"]
+	path = ros_face_recognition
+	url = https://github.com/jacques-saraydaryan/ros_face_recognition
+	branch = master
+[submodule "ros-openpose"]
+	path = ros-openpose
+	url = https://github.com/jacques-saraydaryan/ros-openpose
+	branch = master
+[submodule "ros_openpose_gossip"]
+	path = ros_openpose_gossip
+	url = https://github.com/m0rph03nix/ros_openpose_gossip
+	branch = master
