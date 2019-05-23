@@ -4,5 +4,9 @@
 	branch = master
 [submodule "darknet_ros"]
 	path = darknet_ros
-	url = ./darknet_ros/
+	url = https://github.com/leggedrobotics/darknet_ros
+	branch = master
+[submodule "openpose"]
+	path = openpose
+	url = ./openpose/
 	branch = master
