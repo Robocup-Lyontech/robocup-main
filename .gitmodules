@@ -1,4 +1,4 @@
 [submodule "pepper_virtual"]
 	path = pepper_virtual
-	url = ./pepper_virtual/
+	url = https://github.com/ros-naoqi/pepper_virtual
 	branch = master
