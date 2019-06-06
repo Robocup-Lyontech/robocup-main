@@ -18,10 +18,6 @@
 	path = pepper_robot
 	url = https://github.com/Xia0ben/pepper_robot
 	branch = master
-[submodule "robocup_pepper-HRI-Meta"]
-	path = robocup_pepper-HRI-Meta
-	url = https://gitlab.com/Elyspio/robocup_pepper-HRI-Meta
-	branch = master
 [submodule "robocup_darknet_gateway"]
 	path = robocup_darknet_gateway
 	url = https://github.com/m0rph03nix/robocup_darknet_gateway
@@ -73,4 +69,12 @@
 [submodule "ros_openpose_gossip"]
 	path = ros_openpose_gossip
 	url = https://github.com/m0rph03nix/ros_openpose_gossip
+	branch = master
+[submodule "robocup_pepper-hri_meta"]
+	path = robocup_pepper-hri_meta
+	url = https://github.com/Elyspio/robocup_pepper-hri_meta
+	branch = master
+[submodule "robocup_pepper-scenario_data_generator"]
+	path = robocup_pepper-scenario_data_generator
+	url = https://github.com/Elyspio/robocup_pepper-scenario_data_generator
 	branch = master
