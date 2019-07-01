@@ -78,3 +78,7 @@
 	path = robocup_pepper-scenario_data_generator
 	url = https://github.com/Elyspio/robocup_pepper-scenario_data_generator
 	branch = master
+[submodule "pepper_teleop_ps3"]
+	path = pepper_teleop_ps3
+	url = https://github.com/Xia0ben/pepper_teleop_ps3
+	branch = master
