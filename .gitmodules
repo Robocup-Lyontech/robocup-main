@@ -82,3 +82,11 @@
 	path = pepper_teleop_ps3
 	url = https://github.com/Xia0ben/pepper_teleop_ps3
 	branch = master
+[submodule "hokuyo_node"]
+	path = hokuyo_node
+	url = https://github.com/Xia0ben/hokuyo_node
+	branch = indigo-devel
+[submodule "slam_gmapping"]
+	path = slam_gmapping
+	url = https://github.com/Xia0ben/slam_gmapping
+	branch = hydro-devel
