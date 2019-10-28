@@ -1,0 +1,45 @@
+[submodule "general_mng"]
+	path = general_mng
+	url = git@github.com:jacques-saraydaryan/general_mng
+[submodule "darknet_ros"]
+	path = darknet_ros
+	url = git@github.com:leggedrobotics/darknet_ros
+[submodule "openpose"]
+	path = openpose
+	url = git@github.com:CMU-Perceptual-Computing-Lab/openpose
+[submodule "robocup_darknet_gateway"]
+	path = robocup_darknet_gateway
+	url = git@github.com:m0rph03nix/robocup_darknet_gateway
+[submodule "ros_navigation_manager"]
+	path = ros_navigation_manager
+	url = git@github.com:jacques-saraydaryan/ros_navigation_manager
+[submodule "object_management"]
+	path = object_management
+	url = git@github.com:jacques-saraydaryan/object_management
+[submodule "ros_people_mng"]
+	path = ros_people_mng
+	url = git@github.com:jacques-saraydaryan/ros_people_mng
+[submodule "robocup_msgs"]
+	path = robocup_msgs
+	url = git@github.com:jacques-saraydaryan/robocup_msgs
+[submodule "ros_world_mng"]
+	path = ros_world_mng
+	url = git@github.com:jacques-saraydaryan/ros_world_mng
+[submodule "ros_color_detection"]
+	path = ros_color_detection
+	url = git@github.com:jacques-saraydaryan/ros_color_detection
+[submodule "ros_face_recognition"]
+	path = ros_face_recognition
+	url = git@github.com:jacques-saraydaryan/ros_face_recognition
+[submodule "ros-openpose"]
+	path = ros-openpose
+	url = git@github.com:jacques-saraydaryan/ros-openpose
+[submodule "ros_openpose_gossip"]
+	path = ros_openpose_gossip
+	url = git@github.com:m0rph03nix/ros_openpose_gossip
+[submodule "hokuyo_node"]
+	path = hokuyo_node
+	url = git@github.com:Xia0ben/hokuyo_node
+[submodule "slam_gmapping"]
+	path = slam_gmapping
+	url = git@github.com:Xia0ben/slam_gmapping
