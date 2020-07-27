@@ -1,6 +1,0 @@
-<launch>
-
-  <!-- Navigation Manager in charge of managing pepper navigation according navigation strategy -->
-  <node pkg="navigation_manager" type="NavigationManager.py" name="navigation_manager" required="false" output="screen"></node>
- 
-  </launch>

@@ -52,3 +52,6 @@
 [submodule "robocup_palbator-hri_js"]
 	path = robocup_palbator-hri_js
 	url = https://github.com/abdeljabarferdjani/robocup_palbator-hri_js
+[submodule "robocup_pepper-general_mng"]
+	path = robocup_pepper-general_mng
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-general_mng

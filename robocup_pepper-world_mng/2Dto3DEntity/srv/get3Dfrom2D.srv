@@ -1,5 +1,0 @@
-geometry_msgs/Pose2D pose
-string frame_id
----
-geometry_msgs/Point point
-

@@ -1,6 +1,0 @@
-sensor_msgs/Image img
----
-ros_people_mng_msgs/PeopleMetaInfoList peopleMetaList
----
-#feedback
-int32 feedback

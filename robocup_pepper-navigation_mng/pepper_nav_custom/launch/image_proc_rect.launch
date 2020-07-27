@@ -1,7 +1,0 @@
-<launch>
-
- <node name="image_proc" pkg="image_proc" type="image_proc" ns="/pepper_robot/naoqi_driver/camera/front" output="screen" />
- <!-- <node name="image_proc_depth" pkg="image_proc" type="image_proc" ns="/pepper_robot/naoqi_driver/camera/depth" output="screen" > </node> -->
-
-
-</launch>

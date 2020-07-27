@@ -1,5 +1,0 @@
-Action action_base
-string orientation
-string destinationKey
-geometry_msgs/Pose coord
-int64 waitTime

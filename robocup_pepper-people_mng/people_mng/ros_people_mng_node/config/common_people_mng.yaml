@@ -1,5 +1,0 @@
-kmean_cluster: 3
-imgtest_folder: "/home/student/Bureau/global_palbator/src/robocup-main/robocup_pepper-people_mng/people_mng/ros_people_mng_node/data"
-is_process_displayed: True
-is_face_bounding_box_used: False
-is_continuously_detecting: False
