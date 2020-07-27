@@ -4,9 +4,6 @@
 [submodule "openpose"]
 	path = openpose
 	url = git@github.com:CMU-Perceptual-Computing-Lab/openpose
-[submodule "object_management"]
-	path = object_management
-	url = git@github.com:jacques-saraydaryan/object_management
 [submodule "ros_color_detection"]
 	path = ros_color_detection
 	url = git@github.com:jacques-saraydaryan/ros_color_detection
