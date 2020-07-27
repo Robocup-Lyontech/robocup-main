@@ -4,6 +4,9 @@
 [submodule "openpose"]
 	path = openpose
 	url = git@github.com:CMU-Perceptual-Computing-Lab/openpose
+[submodule "object_management"]
+	path = object_management
+	url = https://github.com/jacques-saraydaryan/object_management
 [submodule "ros_color_detection"]
 	path = ros_color_detection
 	url = git@github.com:jacques-saraydaryan/ros_color_detection
@@ -28,6 +31,21 @@
 [submodule "Palbator_devs"]
 	path = Palbator_devs
 	url = https://github.com/CureThomas/Palbator_devs
+[submodule "robocup_pepper-general_mng"]
+	path = robocup_pepper-general_mng
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-general_mng
+[submodule "ros_navigation_manager"]
+	path = ros_navigation_manager
+	url = https://github.com/jacques-saraydaryan/ros_navigation_manager
+[submodule "ros_people_mng"]
+	path = ros_people_mng
+	url = https://github.com/jacques-saraydaryan/ros_people_mng
+[submodule "robocup_msgs"]
+	path = robocup_msgs
+	url = https://github.com/jacques-saraydaryan/robocup_msgs
+[submodule "ros_world_mng"]
+	path = ros_world_mng
+	url = https://github.com/jacques-saraydaryan/ros_world_mng
 [submodule "robocup_palbator-hri_js"]
 	path = robocup_palbator-hri_js
 	url = https://github.com/abdeljabarferdjani/robocup_palbator-hri_js
