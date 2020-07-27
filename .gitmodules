@@ -1,6 +1,6 @@
 [submodule "openpose"]
 	path = openpose
-	url = https://github.com/CMU-Perceptual-Computing-Lab/openpose
+	url = https://github.com/simonernst/openpose
 [submodule "object_management"]
 	path = object_management
 	url = https://github.com/jacques-saraydaryan/object_management
