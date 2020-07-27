@@ -1,0 +1,8 @@
+string memory_location
+#json like
+string payload
+---
+int32 result
+---
+#feedback
+int32 feedback

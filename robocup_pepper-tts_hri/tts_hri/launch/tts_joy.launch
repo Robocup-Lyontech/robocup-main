@@ -1,0 +1,14 @@
+
+<launch>
+  <env name="PYTHONPATH" value="$(env PYTHONPATH)" /> 
+
+  <arg name="nao_ip" default="$(optenv NAO_IP 192.168.0.189)" />
+  <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
+  <arg name="config_folder" default="/home/astro/catkin_robocup2018/data/tts_dialogue" />
+
+  <node pkg="tts_joy" type="TtsJoy.py" name="tts_joy" required="false" output="screen">
+    <param name="ip" value="$(arg nao_ip)"/>
+    <param name="port" value="$(arg nao_port)"/>
+  </node>
+  
+</launch>

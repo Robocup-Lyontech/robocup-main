@@ -1,0 +1,10 @@
+float32 x
+float32 y
+float32 z
+# if move_head=true move the head in direction to the given coordinates
+bool move_head
+# if move_arm=true move Right Arm OR Left Arm regarding to the given coodinates
+bool move_arm
+
+float32 pose_duration # only when move_arm=true, keep the arm pose during the time, release arm after to rest pose and stiffness reduced
+---

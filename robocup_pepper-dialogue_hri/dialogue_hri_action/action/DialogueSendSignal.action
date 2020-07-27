@@ -1,0 +1,8 @@
+string signal_to_emit
+string signal_to_wait
+---
+int32 result
+string payload
+---
+#feedback
+int32 feedback
