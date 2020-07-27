@@ -1,4 +1,0 @@
-string arm_l_or_r # l = left arm, r = right arm
-float32 turn_rad # radian of arm move, positive value = up, negative value = behind
-float32 stiffness # stiffness of the arm
----

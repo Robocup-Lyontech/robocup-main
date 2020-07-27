@@ -1,4 +1,0 @@
-string arm_l_or_r # l = left arm, r = right arm
-bool keep_pose # if true maintain the pose (thread) until GoToReleasePose is called
-float32 stiffness # stiffness of the arm
----
