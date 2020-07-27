@@ -55,3 +55,6 @@
 [submodule "robocup_pepper-tts_hri"]
 	path = robocup_pepper-tts_hri
 	url = https://github.com/jacques-saraydaryan/robocup_pepper-tts_hri
+[submodule "robocup_pepper-dialogue_hri"]
+	path = robocup_pepper-dialogue_hri
+	url = https://github.com/jacques-saraydaryan/robocup_pepper-dialogue_hri
