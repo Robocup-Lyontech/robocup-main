@@ -4,24 +4,9 @@
 [submodule "openpose"]
 	path = openpose
 	url = git@github.com:CMU-Perceptual-Computing-Lab/openpose
-[submodule "robocup_darknet_gateway"]
-	path = robocup_darknet_gateway
-	url = git@github.com:m0rph03nix/robocup_darknet_gateway
-[submodule "ros_navigation_manager"]
-	path = ros_navigation_manager
-	url = git@github.com:jacques-saraydaryan/ros_navigation_manager
 [submodule "object_management"]
 	path = object_management
 	url = git@github.com:jacques-saraydaryan/object_management
-[submodule "ros_people_mng"]
-	path = ros_people_mng
-	url = git@github.com:jacques-saraydaryan/ros_people_mng
-[submodule "robocup_msgs"]
-	path = robocup_msgs
-	url = git@github.com:jacques-saraydaryan/robocup_msgs
-[submodule "ros_world_mng"]
-	path = ros_world_mng
-	url = git@github.com:jacques-saraydaryan/ros_world_mng
 [submodule "ros_color_detection"]
 	path = ros_color_detection
 	url = git@github.com:jacques-saraydaryan/ros_color_detection
