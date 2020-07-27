@@ -1,30 +1,30 @@
 [submodule "darknet_ros"]
 	path = darknet_ros
-	url = git@github.com:leggedrobotics/darknet_ros
+	url = https://github.com/leggedrobotics/darknet_ros
 [submodule "openpose"]
 	path = openpose
-	url = git@github.com:CMU-Perceptual-Computing-Lab/openpose
+	url = https://github.com/CMU-Perceptual-Computing-Lab/openpose
 [submodule "object_management"]
 	path = object_management
 	url = https://github.com/jacques-saraydaryan/object_management
 [submodule "ros_color_detection"]
 	path = ros_color_detection
-	url = git@github.com:jacques-saraydaryan/ros_color_detection
+	url = https://github.com/jacques-saraydaryan/ros_color_detection
 [submodule "ros_face_recognition"]
 	path = ros_face_recognition
-	url = git@github.com:jacques-saraydaryan/ros_face_recognition
+	url = https://github.com/jacques-saraydaryan/ros_face_recognition
 [submodule "ros-openpose"]
 	path = ros-openpose
-	url = git@github.com:jacques-saraydaryan/ros-openpose
+	url = https://github.com/jacques-saraydaryan/ros-openpose
 [submodule "ros_openpose_gossip"]
 	path = ros_openpose_gossip
-	url = git@github.com:m0rph03nix/ros_openpose_gossip
+	url = https://github.com/m0rph03nix/ros_openpose_gossip
 [submodule "hokuyo_node"]
 	path = hokuyo_node
-	url = git@github.com:Xia0ben/hokuyo_node
+	url = https://github.com/Xia0ben/hokuyo_node
 [submodule "slam_gmapping"]
 	path = slam_gmapping
-	url = git@github.com:Xia0ben/slam_gmapping
+	url = https://github.com/Xia0ben/slam_gmapping
 [submodule "bbox_3d"]
 	path = bbox_3d
 	url = https://github.com/simonernst/bbox_3d
