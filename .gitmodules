@@ -43,3 +43,12 @@
 [submodule "slam_gmapping"]
 	path = slam_gmapping
 	url = git@github.com:Xia0ben/slam_gmapping
+[submodule "bbox_3d"]
+	path = bbox_3d
+	url = https://github.com/simonernst/bbox_3d
+[submodule "Palbator_devs"]
+	path = Palbator_devs
+	url = https://github.com/CureThomas/Palbator_devs
+[submodule "robocup_palbator-hri_js"]
+	path = robocup_palbator-hri_js
+	url = https://github.com/abdeljabarferdjani/robocup_palbator-hri_js

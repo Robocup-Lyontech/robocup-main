@@ -1,0 +1,4 @@
+string orient_name
+robocup_msgs/InterestPoint orient
+---
+bool success

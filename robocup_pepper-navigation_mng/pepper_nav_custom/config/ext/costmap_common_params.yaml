@@ -1,0 +1,76 @@
+max_obstacle_height: 2.0  # assume something like an arm is mounted on top of the robot
+
+# Obstacle Cost Shaping (http://wiki.ros.org/costmap_2d/hydro/inflation)
+robot_radius: 0.30  # distance a circular robot should be clear of the obstacle (kobuki: 0.18)
+# footprint: [[x0, y0], [x1, y1], ... [xn, yn]]  # if the robot is not circular
+footprint: [[0.175, -0.175], [0.0897,-0.23 ], [0.009,-0.225], [-0.122,-0.15], [-0.24,0.0], [-0.122,0.15], [0.009,0.225], [0.0897,0.23], [0.175,0.175]]
+map_type: voxel
+
+obstacle_layer:
+  enabled:              true
+  footprint_clearing_enabled: true
+  max_obstacle_height:  2.0
+  #origin_z:             0.0
+  #z_resolution:         0.2
+  #z_voxels:             10
+  unknown_threshold:    15
+  mark_threshold:       0
+  combination_method:   1
+  track_unknown_space:  true    #true needed for disabling global path planning through unknown space
+  obstacle_range: 2.5
+  raytrace_range: 3.0
+  origin_z: 0.0
+  z_resolution: 1.0 #0.1 seems to get influence on removing obsctales
+  z_voxels: 10 #10
+  publish_voxel_map: false
+  observation_sources:  depth_pcl scan2 scan3
+  depth_pcl:
+    data_type: PointCloud2
+    topic:  /pcl
+    marking: true
+    clearing: true
+    min_obstacle_height: 0.2 #scan data's real frame is head but it is broadcasted as base_link.
+    max_obstacle_height: 2.0
+    observation_persistence: 0.0
+    obstacle_range: 0.75 #0.75
+    raytrace_range: 2.0
+    inf_is_valid: false
+
+  scan2:
+    data_type: LaserScan
+    topic: /scan #/pepper_robot/naoqi_driver/laser #scan or /scan?
+    marking: true
+    clearing: true
+    obstacle_range: 2.0  #to remove if needed or set to 1.5 to be safe, greater distance lead to faster move but with more risk of collision
+    inf_is_valid: true
+    min_obstacle_height: -0.15 #scan data's real frame is head but it is broadcasted as base_link.
+    max_obstacle_height: 2.0
+    observation_persistence: 0.0
+
+scan3:
+    data_type: LaserScan
+    topic: /scan #/pepper_scan_costmap #/pepper_robot/laser #scan or /scan?
+    marking: false
+    clearing: true
+    inf_is_valid: true
+    min_obstacle_height: -0.15 #scan data's real frame is head but it is broadcasted as base_link.
+    max_obstacle_height: 2.0
+    observation_persistence: 0.0
+    
+#might able to add real laser data
+
+#cost_scaling_factor and inflation_radius were now moved to the inflation_layer ns
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  0.5  # exponential rate at which the obstacle cost drops off (default: 10) 0.5
+  inflation_radius:     0.30  # max. distance from an obstacle at which costs are incurred for planning paths. 0.12
+
+inflation_layer_local:
+  enabled:              true
+  cost_scaling_factor:  1.5  # exponential rate at which the obstacle cost drops off (default: 10) 5.0
+  inflation_radius:     0.30  # max. distance from an obstacle at which costs are incurred for planning paths. 0.12
+
+static_layer:
+  enabled:              true #true
+  
+

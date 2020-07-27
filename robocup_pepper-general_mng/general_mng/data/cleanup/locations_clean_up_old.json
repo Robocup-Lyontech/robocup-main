@@ -1,0 +1,27 @@
+[
+    {
+        "id": "singleBedroom", 
+        "pathOnTablet": "img/locations/bedroom.png",
+        "name": "Single Bedroom"
+    },
+    {
+        "id": "doubleBedroom", 
+        "pathOnTablet": "img/locations/bedroom.png",
+        "name": "Double Bedroom"
+    },
+    {
+        "id": "livingRoom",
+        "pathOnTablet": "img/locations/livingRoom.png",
+        "name": "Living Room"
+    },
+    {
+        "id": "entrance",
+        "pathOnTablet": "img/locations/entrance.png",
+        "name": "Entrance"
+    },
+    {
+        "id": "kitchen",
+        "pathOnTablet": "img/locations/kitchen.png",
+        "name": "Kitchen"
+    }
+]

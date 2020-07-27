@@ -1,0 +1,145 @@
+{
+    "duration": 300,
+    "parameters":{
+        "LTHri_action_server_name": "action_GmToHri"
+      },
+    "imports":{
+        "locations": "cleanup/locations.json",
+        "objects": "cleanup/objects.json"
+    },
+    "variables":{
+        "scenarioInfos": "cleanup/scenarioInfos.json"
+    },
+    "steps": [
+        {
+            "name": "Ask room to clean",
+            "order": 0,
+            "eta": 10,
+            "arguments": {},
+            "action": "",
+            "id": "FindLoc1"
+        },
+        {
+            "name": "Choose room to clean",
+            "order": 1,
+            "eta": 0,
+            "speech": {
+                "said": "Which room do I have to clean ?",
+                "title": "Which room do I have to clean ?"
+            },
+            "arguments": {
+                "what": "location"
+            },
+            "action": "askRoomToClean",
+            "id": "chooseLoc1"
+        },
+        {
+            "name": "Confirm room",
+            "order": 2,
+            "eta": 0,
+            "speech": {
+                "said": "Did you choose the location_name ?",
+                "title": "Did you choose the location_name ?"
+            },
+            "arguments": {
+                "what": "ChoosenRoom_1"
+            },
+            "action": "confirm",
+            "id": "chooseLoc1_confirm"
+        },
+        {
+            "name": "Open door",
+            "order": 3,
+            "eta": 0,
+            "speech": {
+                "said": "I will open the door",
+                "title": "I will open the door"
+            },
+            "action": "openDoor",
+            "id": "openDoor1"
+        },
+        {
+            "name": "Travel to room",
+            "order": 4,
+            "eta": 0,
+            "speech": {
+                "said": "I am travelling to ChoosenRoom_1_name",
+                "title": "I am travelling to ChoosenRoom_1_name"
+            },
+            "arguments": {
+                "what": "ChoosenRoom_1",
+                "location": {
+                    "pathOnTablet" : "ChoosenRoom_1_path",
+                    "name": "ChoosenRoom_1_name"
+                  } 
+            },
+            "action": "goTo",
+            "id": "goTo1"
+        },
+        {
+            "name": "Find the object",
+            "order": 5,
+            "eta": 0,
+            "speech": {
+                "said": "I am looking for the object_name",
+                "title": "I am looking for the object_name"
+            },
+            "arguments": {
+                "what": "object_name",
+                "pathOnTablet": "object_path"
+            },
+            "action": "findObject",
+            "id": "findObj1"
+        },
+        {
+            "name": "Catch the object",
+            "order": 6,
+            "eta": 0,
+            "speech": {
+                "said": "I am catching the object_name",
+                "title": "I am catching the object_name"
+            },
+            "arguments": {
+                "what": "object_name",
+                "pathOnTablet": "object_path"
+            },
+            "action": "catchObject",
+            "id": "catchObj1"
+        },
+        {
+            "name": "Go to store object",
+            "order": 7,
+            "eta": 0,
+            "speech": {
+                "said": "I am going to store the object_name",
+                "title": "I am going to store the object_name"
+            },
+            "arguments": {
+                "what": "object_name",
+                "pathObject": "object_path",
+                "where": "object_location",
+                "pathLocation": "location_path"
+            },
+            "action": "storeObject",
+            "id": "storeObj1"
+        },
+        {
+            "name": "Release the object",
+            "order": 8,
+            "eta": 0,
+            "speech": {
+                "said": "I release the object_name",
+                "title": "I release the object_name"
+            },
+            "arguments": {
+                "what": "object_name",
+                "pathObject": "object_path"
+            },
+            "action": "releaseObject",
+            "id": "releaseObj1"
+        }
+        
+    ],
+    "name": "Clean_up"
+}
+  

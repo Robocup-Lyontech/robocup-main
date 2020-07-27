@@ -1,0 +1,7 @@
+<launch>
+<!-- depth image to pcl -->
+<arg name="custom_amcl_launch_file" default="$(find pepper_nav_custom)/launch/includes/depth_to_point.launch.xml"/>
+<include file="$(arg custom_amcl_launch_file)">
+  
+  </include>
+</launch>

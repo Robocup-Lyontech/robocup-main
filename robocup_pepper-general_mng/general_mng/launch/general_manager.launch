@@ -1,0 +1,8 @@
+<launch>
+
+  <rosparam file="$(find general_mng)/config/common_gm.yaml" />
+  <node pkg="general_mng" type="GeneralManager.py" name="GeneralManager"  output="screen" >
+    
+  </node>
+
+</launch>

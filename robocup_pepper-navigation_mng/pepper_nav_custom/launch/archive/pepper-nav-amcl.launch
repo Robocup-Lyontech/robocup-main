@@ -1,0 +1,69 @@
+<launch>
+<!-- 
+    <arg name="scan_pepper" default="/pepper_filter_scan"/>
+-->
+  <!-- Map server -->
+  <!-- 
+  <arg name="map_file" default="/home/astrostudent/catkin_pepper/test_pepper_r12_clean.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+-->
+
+
+<!-- CAUTION  remap is needed because the amcl use the tf of the pepper robot that is /odom -->
+ <remap from="odom" to="/pepper_robot/naoqi_driver/odom"/>
+
+
+  <!-- AMCL -->
+  <arg name="custom_amcl_launch_file" default="$(find pepper_nav_custom)/launch/includes/pepper_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="0.0"/> 
+  <arg name="initial_pose_a" default="0.0"/>
+ 
+   <arg name="odom_frame_id" default="/odom"/> 
+  <arg name="base_frame_id" default="/base_footprint"/>
+  <arg name="scan_topic" default="/pepper_robot/naoqi_driver/laser"/>
+
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+    <arg name="scan_topic" default="$(arg scan_topic)"/>
+    <arg name="odom_frame_id" default="$(arg odom_frame_id)"/>
+    <arg name="base_frame_id" default="$(arg base_frame_id)"/>
+  </include>
+
+
+
+
+<!-- AMCL -->
+<!--
+  <arg name="odom_frame_id" default="/odom"/> 
+  <arg name="base_frame_id" default="/base_footprint"/>
+  <arg name="scan_topic" default="/pepper_robot/naoqi_driver/laser"/>
+
+  <arg name="custom_amcl_launch_file" default="$(find pepper_nav_custom)/launch/includes/asus_xtion_pro_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/> 
+  <arg name="initial_pose_y" default="0.0"/> 
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+ -->
+
+
+
+<!--  <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/> -->
+
+  <!-- Move base -->
+  <arg name="custom_param_file" default="$(find pepper_nav_custom)/config/pepper_costmap_params.yaml"/>
+  <include file="$(find pepper_nav_custom)/launch/includes/move_base.launch.xml">
+    <arg name="laser_topic" default="$(arg scan_topic)" />
+    <arg name="odom_frame_id" default="$(arg odom_frame_id)"/>
+    <arg name="base_frame_id" default="$(arg base_frame_id)"/>
+  </include>
+  
+  
+
+</launch>

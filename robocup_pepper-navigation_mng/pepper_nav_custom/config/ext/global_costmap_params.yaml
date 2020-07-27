@@ -1,0 +1,28 @@
+#global_costmap:
+#   global_frame: /map
+#   robot_base_frame: /base_footprint
+#   update_frequency: 1.0
+#   publish_frequency: 0.5
+#   static_map: true
+#   transform_tolerance: 0.5
+#   always_send_full_costmap: true
+#   plugins:
+#     - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+#     - {name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}
+#     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
+
+
+
+global_costmap:
+   global_frame: /map
+   robot_base_frame: /base_footprint
+   update_frequency: 2.0
+   publish_frequency: 2.5
+   static_map: true # Set to false allow after using AggClearCostMapRecovery to replan correctly a path, default:true false lead to warning  The origin for the sensor at (0.57, -3.01, 1.09) is out of map bounds
+   transform_tolerance: 0.5
+   always_send_full_costmap: true
+   plugins:
+     - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
+     - {name: obstacle_layer,          type: "costmap_2d::VoxelLayer"}
+

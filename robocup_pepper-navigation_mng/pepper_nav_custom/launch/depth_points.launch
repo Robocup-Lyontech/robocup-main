@@ -1,0 +1,50 @@
+
+<launch>
+
+
+<!-- Point cloud from image depth /points -->
+<arg name="depth_image_topic"  default="/pepper_robot/naoqi_driver/camera/depth/image_raw"/>
+  <arg name="depth_camera_info"  default="/pepper_robot/naoqi_driver/camera/depth/camera_info"/>
+
+
+  <!-- Nodelet manager for this pipeline -->
+  <node pkg="nodelet" type="nodelet" args="manager"
+        name="record_player_manager" output="screen"/>
+
+  <!--  *******depth_image_proc/convert_metric****** -->
+<!-- USED To rectify the depth image into the image_proc node -->
+<!--  ns="/pepper_robot/naoqi_driver/camera/depth" -->
+<node pkg="nodelet" type="nodelet" name="convert_metric" args="load depth_image_proc/convert_metric record_player_manager --no-bond" output="screen"  >
+     <remap from="image_raw" to="/pepper_robot/naoqi_driver/camera/depth/image_raw"/> 
+     <remap from="image" to="/pepper_robot/naoqi_driver/camera/depth/image"/>
+</node>
+
+ 
+<!-- <node pkg="nodelet" type="nodelet" name="imageRec" args="load image_proc/rectify record_player_manager" output="screen"> -->
+<!--     <remap from="image_mono" to="/pepper_robot/naoqi_driver/camera/front/camera_info" />  -->
+<!-- <remap from="camera_info" to="/pepper_robot/naoqi_driver/camera/front/camera_info" />  -->
+<!--     <remap from="image_rect" to="/adjusted/image_rect_color" />  -->
+<!-- </node> -->
+<!-- <node pkg="nodelet" type="nodelet" name="cloudify" args="load depth_image_proc/point_cloud_xyz record_player_manager -no-bond" output="screen" > -->
+<!--    <remap from="image_rect" to="/pepper_robot/naoqi_driver/camera/depth/image_rect"/> -->
+<!--    <remap from="camera_info" to="/pepper_robot/naoqi_driver/camera/depth/camera_info"/> -->
+<!-- </node> -->
+
+<node pkg="nodelet" type="nodelet" name="register" args="load depth_image_proc/register record_player_manager --no-bond" output="screen">
+    <remap from="/depth/image_rect" to="/pepper_robot/naoqi_driver/camera/depth/image_raw"/>
+    <remap from="/rgb/camera_info" to="/pepper_robot/naoqi_driver/camera/front/camera_info"/>
+    <remap from="/depth/camera_info" to="/pepper_robot/naoqi_driver/camera/depth/camera_info"/>
+    <remap from="/depth_registered" to="/adjusted/depth_registered"/>
+</node>
+
+ <node pkg="nodelet" type="nodelet" name="registerdepth" args="load depth_image_proc/point_cloud_xyzrgb record_player_manager --no-bond" output="screen">
+    <remap from="/rgb/camera_info" to="/pepper_robot/naoqi_driver/camera/front/camera_info"/> 
+    <remap from="/rgb/image_rect_color" to="/pepper_robot/naoqi_driver/camera/front/image_raw"/> 
+    <remap from="/depth_registered/image_rect" to="/adjusted/depth_registered/image_rect"/>
+    <remap from="/depth_registered/points" to="/my/points"/>
+ </node>  
+ 
+
+</launch>
+
+

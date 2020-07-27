@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<package>
+  <name>general_mng</name>
+  <version>0.0.0</version>
+  <description>The general_mng package</description>
+
+  <maintainer email="jsaraydaryan@todo.todo">jsaraydaryan</maintainer>
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>robocup_msgs</build_depend>
+  <build_depend>navigation_manager</build_depend>
+  <build_depend>tts_hri</build_depend>
+  <build_depend>dialogue_hri_actions</build_depend>
+  <build_depend>object_management</build_depend>
+
+  
+  
+  
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>robocup_msgs</run_depend>
+  <run_depend>navigation_manager</run_depend>
+  <run_depend>tts_hri</run_depend>
+  <run_depend>dialogue_hri_actions</run_depend>
+  <run_depend>object_management</run_depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

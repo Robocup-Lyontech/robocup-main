@@ -1,0 +1,86 @@
+[
+    {
+        "id": "bleach",
+        "pathOnTablet": "img/objects/bleach.png",
+        "name": "Bleach",
+        "storage": "Bedroom"
+    },
+    {
+        "id": "chips",
+        "pathOnTablet": "img/objects/chips.png",
+        "name": "Chips",
+        "storage": "Bedroom"
+    },
+    {
+        "id": "coffee",
+        "pathOnTablet": "img/objects/coffee.png",
+        "name": "Coffee",
+        "storage": "Bedroom"
+    },
+    {
+        "id": "cracker",
+        "pathOnTablet": "img/objects/cracker.png",
+        "name": "Cracker",
+        "storage": "Living Room"
+    },
+    {
+        "id": "jello",
+        "pathOnTablet": "img/objects/jello.png",
+        "name": "Jello",
+        "storage": "Living Room"
+    },
+    {
+        "id": "mustard",
+        "pathOnTablet": "img/objects/mustard.png",
+        "name": "Mustard",
+        "storage": "Bedroom"
+    },
+    {
+        "id": "pitcher",
+        "pathOnTablet": "img/objects/pitcher.png",
+        "name": "Pitcher",
+        "storage": "Entrance"
+    },
+    {
+        "id": "pottedmeat",
+        "pathOnTablet": "img/objects/pottedmeat.png",
+        "name": "Potted Meat",
+        "storage": "Entrance"
+    },
+    {
+        "id": "pudding",
+        "pathOnTablet": "img/objects/pudding.png",
+        "name": "Pudding",
+        "storage": "Bedroom"
+    },
+    {
+        "id": "sugar",
+        "pathOnTablet": "img/objects/sugar.png",
+        "name": "Sugar",
+        "storage": "Living Room"
+    },
+    {
+        "id": "tomatosoup",
+        "pathOnTablet": "img/objects/tomatosoup.png",
+        "name": "Tomato Soup",
+        "storage": "Bedroom"
+    },
+    {
+        "id": "tuna",
+        "pathOnTablet": "img/objects/tuna.png",
+        "name": "Tuna",
+        "storage": "Living Room"
+    },
+    {
+        "id": "windex",
+        "pathOnTablet": "img/objects/windex.png",
+        "name": "Windex",
+        "storage": "Bedroom"
+    },
+    {
+        "id": "unknown",
+        "pathOnTablet": "img/objects/unknown.png",
+        "name": "Unknown Object",
+        "storage": ""
+    }
+]

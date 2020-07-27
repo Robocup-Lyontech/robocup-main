@@ -1,0 +1,40 @@
+<launch>
+
+  <!-- <arg name="camera_topic" value="/pepper_robot/camera/front/image_raw"/> -->
+  <!-- <arg name="camera_topic" value="/webcam/image_raw"/> -->
+  <arg name="camera_topic" value="/kinect/color/image_raw"/>
+
+<!--   <arg name="camera_topic" value="/usb_cam/image_raw"/>-->
+   <!-- <arg name="camera_topic_manager" value="/usb_cam/image_raw"/> -->
+   <!-- <arg name="camera_topic_manager" value="/webcam/image_raw"/> -->
+  <arg name="camera_topic_manager" value="/kinect/color/image_raw"/>
+<!--    <arg name="camera_topic_manager" value="/pepper_robot/naoqi_driver/camera/front/image_raw"/>-->
+
+  <arg name="result_image_topic" value="/openpose/image_raw"/>
+  <arg name="resolution" value="480x320"/>
+  <arg name="active_face" value="false"/>
+
+  <include file="$(find openpose_ros_node)/launch/openpose.launch">
+    <arg name="camera_topic" value="$(arg camera_topic)"/>
+    <arg name="result_image_topic" value="$(arg result_image_topic)"/>
+    <arg name="resolution" value="$(arg resolution)"/>
+    <arg name="active_face" value="$(arg active_face)"/>
+  </include>
+
+  <include file="$(find people_face_identification)/launch/face_identification.launch">
+  </include>
+
+  <rosparam file="$(find ros_color_detection_node)/config/common_color.yaml" />
+  <node pkg="ros_color_detection_node" type="ColorDetectionNode.py" name="ColorDetectionNode"  output="log" >
+  </node>
+  
+  <node pkg="ros_openpose_gossip_node" type="OpenPoseGossip_node.py" name="OpenPoseGossip_node"  output="screen" >
+  </node>
+
+  <rosparam file="$(find ros_people_mng_node)/config/common_people_mng.yaml" />
+  <node pkg="ros_people_mng_node" type="PeopleMngNode.py" name="PeopleMngNode"  output="screen" >
+      <remap from="image" to="$(arg camera_topic_manager)"/> 
+  </node> 
+
+
+</launch>

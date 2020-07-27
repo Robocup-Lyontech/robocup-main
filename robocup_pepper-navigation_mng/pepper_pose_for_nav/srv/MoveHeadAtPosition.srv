@@ -1,0 +1,5 @@
+float32 pitch_value
+float32 yaw_value
+bool continuous_fix
+---
+bool result

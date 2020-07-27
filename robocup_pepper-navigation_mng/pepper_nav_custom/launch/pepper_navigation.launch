@@ -1,0 +1,70 @@
+<launch>
+  
+  <arg name="map_file" default="$(find pepper_nav_custom)/maps/humanoo_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  
+  <!-- start 3d information used by worldmanagement and navigation for 3d costmap update -->
+  <!-- <include file="$(find pepper_nav_custom)/launch/depth_points.launch"/> -->
+
+  <!-- convert depth img to pcl for naivgation and costmap on /points -->
+  <!--<include file="$(find pepper_nav_custom)/launch/depth_pcl_points.launch"/> -->
+
+ <arg name="scan_topic" default=""/>
+ <arg name="pcl_topic" default=""/>
+ <remap from="scan" to="$(arg scan_topic)"/>
+ <remap from="pcl" to="$(arg pcl_topic)"/>
+<remap from="odom" to="/pepper_robot/odom"/>
+  <!-- THEIR AMCL -->
+<!--   <arg name="custom_amcl_launch_file" default="$(find pepper_nav_custom)/launch/includes/ext/asus_xtion_pro_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/> 
+  <arg name="initial_pose_y" default="0.0"/> 
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+  -->
+
+
+<!-- OUR AMCL -->
+
+  <arg name="custom_amcl_launch_file" default="$(find pepper_nav_custom)/launch/includes/pepper_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="0.0"/> 
+  <arg name="initial_pose_a" default="0.0"/>
+ 
+  <arg name="odom_frame_id" default="/odom"/> 
+  <arg name="base_frame_id" default="/base_footprint"/>>
+
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+    <arg name="scan_topic" default="$(arg scan_topic)"/>
+    <arg name="odom_frame_id" default="$(arg odom_frame_id)"/>
+    <arg name="base_frame_id" default="$(arg base_frame_id)"/>
+  </include>
+
+
+
+
+
+
+  <!-- Move base -->
+  <arg name="custom_param_file" default=""/>
+  <include file="$(find pepper_nav_custom)/launch/includes/ext/pepper_move_base.xml">
+    <arg name="laser_topic" value="$(arg scan_topic)"/>
+    <!--<arg name="custom_param_file" value="$(arg custom_param_file)"/> -->
+  </include>
+
+   
+
+  <!-- Rviz 
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pal_pepper
+          )/config/pepper.rviz" />
+
+          -->
+
+</launch>
+

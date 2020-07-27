@@ -1,0 +1,7 @@
+string name
+sensor_msgs/Image img
+---
+ros_people_mng_msgs/PeopleMetaInfo peopleMetaInfo
+---
+#feedback
+int32 feedback

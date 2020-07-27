@@ -1,0 +1,20 @@
+
+<launch>
+
+  <arg name="depth_image_topic"  default="/pepper_robot/naoqi_driver/camera/depth/image_raw"/>
+  <arg name="depth_camera_info"  default="/pepper_robot/naoqi_driver/camera/depth/camera_info"/>
+
+  <!-- Nodelet manager for this pipeline -->
+  <node pkg="nodelet" type="nodelet" args="manager"
+        name="record_player_manager" output="screen"/>
+
+  <node pkg="nodelet" type="nodelet" name="cloudify" args="load depth_image_proc/point_cloud_xyz record_player_manager --no-bond" output="screen">
+    <remap from="image_rect" to="/pepper_robot/naoqi_driver/camera/depth/image_raw"/>
+    <remap from="camera_info" to="/pepper_robot/naoqi_driver/camera/depth/camera_info"/>
+</node>
+
+ 
+
+</launch>
+
+

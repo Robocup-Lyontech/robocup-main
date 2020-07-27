@@ -1,0 +1,20 @@
+{
+    "Guest_2": {
+        "drink": "Ice Tea", 
+        "name": "Sally", 
+        "pathOnTablet": "img/drinks/iceTea.png", 
+        "guestPhotoPath": "img/people/Guest_2.png"
+    }, 
+    "John": {
+        "drink": "Coke", 
+        "name": "John", 
+        "pathOnTablet": "img/drinks/coke.png", 
+        "guestPhotoPath": "img/people/John.png"
+    }, 
+    "Guest_1": {
+        "drink": "Dr Pepper", 
+        "name": "Matt", 
+        "pathOnTablet": "img/drinks/drPepper.png", 
+        "guestPhotoPath": "img/people/Guest_1.png"
+    }
+}

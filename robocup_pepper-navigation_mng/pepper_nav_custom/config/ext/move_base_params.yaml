@@ -1,0 +1,82 @@
+# Move base node parameters. For full documentation of the parameters in this file, please see
+#
+#  http://www.ros.org/wiki/move_base
+#
+shutdown_costmaps: false #Determines whether or not to shutdown the costmaps of the node when move_base is in an inactive state 
+
+controller_frequency: 5.0 # The rate in Hz at which to run the control loop and send velocity commands to the base. default: 5.0
+controller_patience: 3.0  #  How long the planner will wait in seconds in an attempt to find a valid plan before space-clearing operations are performed.  default 3.0
+
+
+planner_frequency: 2.0 # default 2
+planner_patience: 5.0
+
+oscillation_timeout: 5.0 #10.0  #How long in seconds to allow for oscillation before executing recovery behaviors. A value of 0.0 corresponds to an infinite timeout. 
+oscillation_distance: 0.05 # 0.2 #How far in meters the robot must move to be considered not to be oscillating. Moving this far resets the timer counting up to the ~oscillation_timeout
+
+# local planner - default is trajectory rollout
+base_local_planner: "dwa_local_planner/DWAPlannerROS"
+#base_local_planner: "eband_local_planner/EBandPlannerROS"
+
+
+base_global_planner: "navfn/NavfnROS" #alternatives: global_planner/GlobalPlanner, carrot_planner/CarrotPlanner
+
+
+#We plan to integrate recovery behaviors for turtlebot but currently those belong to gopher and still have to be adapted.
+## recovery behaviors; we avoid spinning, but we need a fall-back replanning
+recovery_behavior_enabled: false #true
+
+#recovery_behaviors:
+#  - name: 'super_conservative_reset1'
+#    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+#  - name: 'conservative_reset1'
+#    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+#  - name: 'aggressive_reset1'
+#    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+#  - name: 'clearing_rotation1'
+#    type: 'rotate_recovery/RotateRecovery'
+#  - name: 'super_conservative_reset2'
+#    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+#  - name: 'conservative_reset2'
+#    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+#  - name: 'aggressive_reset2'
+#    #type: 'clear_costmap_recovery/ClearCostmapRecovery'
+#  - name: 'clearing_rotation2'
+#    type: 'rotate_recovery/RotateRecovery'
+
+#super_conservative_reset1:
+#  reset_distance: 3.0
+#conservative_reset1:
+#  reset_distance: 10.0
+#aggressive_reset1:
+#  reset_distance: 10.0
+#super_conservative_reset2:
+#  reset_distance: 3.0
+#conservative_reset2:
+#  reset_distance: 1.5
+#aggressive_reset2:
+#  reset_distance: 30.0
+
+
+
+## CURRENTLY NOT WORKING DUE TO THE CLEARCOSTMAP PLUGIN not tale intp account defined layers
+recovery_behaviors:
+  - name: 'clear1'
+    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+  - name: 'clear2'
+    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+  #- name: 'agg_clear3'
+  #  type: 'agg_clear_costmap_recovery/AggClearCostMapRecovery'
+  #- name: 'clearing_rotation2'
+  #  type: 'rotate_recovery/RotateRecovery'
+
+  
+clear1:
+  reset_distance: 3.0
+  layer_names: ["obstacle_layer"]
+clear2:
+  reset_distance: 30.0
+  layer_names: ["obstacle_layer","inflate_layer"]
+agg_clear3:
+  reset_distance: 30.0
+
