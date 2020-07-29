@@ -22,12 +22,6 @@
 [submodule "slam_gmapping"]
 	path = slam_gmapping
 	url = https://github.com/Xia0ben/slam_gmapping
-[submodule "bbox_3d"]
-	path = bbox_3d
-	url = https://github.com/simonernst/bbox_3d
-[submodule "Palbator_devs"]
-	path = Palbator_devs
-	url = https://github.com/CureThomas/Palbator_devs
 [submodule "robocup_pepper-general_mng"]
 	path = robocup_pepper-general_mng
 	url = https://github.com/jacques-saraydaryan/robocup_pepper-general_mng
@@ -43,9 +37,6 @@
 [submodule "ros_world_mng"]
 	path = ros_world_mng
 	url = https://github.com/jacques-saraydaryan/ros_world_mng
-[submodule "robocup_palbator-hri_js"]
-	path = robocup_palbator-hri_js
-	url = https://github.com/abdeljabarferdjani/robocup_palbator-hri_js
 [submodule "robocup_darknet_gateway"]
 	path = robocup_darknet_gateway
 	url = https://github.com/m0rph03nix/robocup_darknet_gateway
@@ -58,3 +49,12 @@
 [submodule "darknet_ros"]
 	path = darknet_ros
 	url = https://github.com/simonernst/darknet_ros
+[submodule "bbox_3d"]
+	path = bbox_3d
+	url = https://github.com/Robocup-Lyontech/bbox_3d
+[submodule "Palbator_devs"]
+	path = Palbator_devs
+	url = https://github.com/Robocup-Lyontech/Palbator_devs
+[submodule "robocup_palbator-hri_js"]
+	path = robocup_palbator-hri_js
+	url = https://github.com/Robocup-Lyontech/robocup_palbator-hri_js
