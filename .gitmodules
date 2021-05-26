@@ -30,7 +30,7 @@
 	url = https://github.com/jacques-saraydaryan/robocup_pepper-general_mng
 [submodule "ros_navigation_manager"]
 	path = ros_navigation_manager
-	url = https://github.com/jacques-saraydaryan/ros_navigation_manager
+	url = https://github.com/Snoke13/ros_navigation_manager
 [submodule "ros_people_mng"]
 	path = ros_people_mng
 	url = https://github.com/Snoke13/ros_people_mng
