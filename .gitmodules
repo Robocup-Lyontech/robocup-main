@@ -33,13 +33,13 @@
 	url = https://github.com/Snoke13/ros_navigation_manager
 [submodule "ros_people_mng"]
 	path = ros_people_mng
-	url = https://github.com/jacques-saraydaryan/ros_people_mng
+	url = https://github.com/Snoke13/ros_people_mng
 [submodule "robocup_msgs"]
 	path = robocup_msgs
 	url = https://github.com/jacques-saraydaryan/robocup_msgs
 [submodule "ros_world_mng"]
 	path = ros_world_mng
-	url = https://github.com/jacques-saraydaryan/ros_world_mng
+	url = https://github.com/Snoke13/ros_world_mng
 [submodule "robocup_darknet_gateway"]
 	path = robocup_darknet_gateway
 	url = https://github.com/m0rph03nix/robocup_darknet_gateway
