@@ -48,15 +48,15 @@ rostopic pub /gm_start std_msgs/String "data: 'Robocup_simu_scenario'"
 roslaunch robocup_launcher common_stuff.launch
 ```
 
-Includes :
-    - World Manager
-    - Navigation Manager  
+Includes :  
+    - World Manager  
+    - Navigation Manager    
 
 
-Nodes :
-    - namo_scan.py
-    - MessageParser.py
-    - Rviz
+Nodes :  
+    - namo_scan.py  
+    - MessageParser.py  
+    - Rviz  
 
 
 ### Message Parser
