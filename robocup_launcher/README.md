@@ -61,4 +61,4 @@ Nodes :
 
 ### Message Parser
 
-[Message Parser README](script/README.md)
+[Message Parser README](scripts/README.md)
