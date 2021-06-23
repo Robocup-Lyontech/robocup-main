@@ -1,6 +1,6 @@
 [submodule "darknet_ros"]
 	path = darknet_ros
-	url = https://github.com/leggedrobotics/darknet_ros
+	url = https://github.com/jacques-saraydaryan/darknet_ros.git
 [submodule "openpose"]
 	path = openpose
 	url = https://github.com/CMU-Perceptual-Computing-Lab/openpose
