@@ -1,0 +1,23 @@
+<launch>
+
+    <!-- LAUNCHES -->
+    <!-- World Manager -->
+    <include file="$(find world_manager)/launch/world_mng.launch" />  
+
+    <!-- Navigation Manager -->
+    <include file="$(find navigation_manager)/launch/pmb2_navigation_mng_overall.launch" />
+
+
+
+
+    <!-- NODES -->
+    <!-- Message Parser -->
+    <node name="MessageParser" pkg="robocup_launcher" type="MessageParser.py" output="screen" />
+
+    <!--  NAMO scan -->
+    <node name="namo_scan" pkg="world_manager" type="namo_scan.py" output="screen" />
+ 
+    <!-- Rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d config/rviz/official_config.rviz" />7
+
+</launch>
