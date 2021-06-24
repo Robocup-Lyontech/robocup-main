@@ -36,6 +36,17 @@ source ./set-rosmaster.sh
 # Sub-terminal Darknet
 roslaunch object_management merge_topics_to_one.launch
 
+# In an other terminal (in Sub-terminal Darknet)
+xhost +local:docker &>/dev/null
+
+export DOCKER_COMMON_ARGS=" --env=NVIDIA_VISIBLE_DEVICES=all --env=NVIDIA_DRIVER_CAPABILITIES=all --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume=/tmp/.X11-unix:/tmp/.X11-unix:rw"
+
+docker run -it --rm -e ROS_IP=$ROS_IP -e ROS_MASTER_URI=$ROS_MASTER_URI -p 11311:11311 --net=host --privileged --gpus=all --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume=/tmp/.X11-unix:/tmp/.X11-unix:rw ghcr.io/jacques-saraydaryan/ros-openpose-darknet-ros:robocup2021
+
+# inside the launched Darknet Docker
+source /ros_robocup/devel/setup.bash
+roslaunch darknet_ros darknet_ros.launch
+
 # Sub-terminal robocup-main
 roslaunch general_mng general_manager.launch
 roslaunch pmb2_apps palbator_moveit_control.launch
