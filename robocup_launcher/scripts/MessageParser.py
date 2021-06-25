@@ -5,7 +5,8 @@ __author__ ='Raphael Leber'
 
 import rospy 
 import actionlib
-from std_msgs.msg import String, Int16
+from std_msgs.msg import String, Int16, Empty
+from robocup_launcher.srv import MessageParserSrv, MessageParserSrvResponse
 
 
 
@@ -24,6 +25,12 @@ class MessageParser():
         self.pubObject = rospy.Publisher('/message/object', String, queue_size=1)
         self.pubObjectNum = rospy.Publisher('/message/object_num', Int16, queue_size=1)
         self.pubObjectDarknet = rospy.Publisher('/message/object_darknet', String, queue_size=1)
+
+        # --------------
+        # Declare tservices
+        # --------------
+        self.service = rospy.Service('message_parser', MessageParserSrv, self.serve_parsed_message)
+
 
         # Declare attributes
         self.person = "pending"
@@ -68,6 +75,18 @@ class MessageParser():
 
         if( num > 0 ):
             self.object_darknet = self.ycb_num_to_darknet_label(num)
+
+    # Service callback
+    def serve_parsed_message(self, req):
+        
+        mp = MessageParserSrvResponse()
+
+        mp.person = self.person
+        mp.object = self.object
+        mp.object_num = self.object_num
+        mp.object_darknet = self.object_darknet
+
+        return mp
 
 
     # check if there is an object name of the ycb dataset is in the /message request
