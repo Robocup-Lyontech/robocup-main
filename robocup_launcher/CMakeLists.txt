@@ -57,6 +57,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(
   FILES
   MessageParserSrv.srv
+  GraspingStateSrv.srv
 )
 
 ## Generate actions in the 'action' folder

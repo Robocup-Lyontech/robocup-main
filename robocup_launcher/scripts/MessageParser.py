@@ -27,7 +27,7 @@ class MessageParser():
         self.pubObjectDarknet = rospy.Publisher('/message/object_darknet', String, queue_size=1)
 
         # --------------
-        # Declare tservices
+        # Declare Services
         # --------------
         self.service = rospy.Service('message_parser', MessageParserSrv, self.serve_parsed_message)
 
