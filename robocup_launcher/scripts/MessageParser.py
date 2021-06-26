@@ -7,6 +7,7 @@ import rospy
 import actionlib
 from std_msgs.msg import String, Int16, Empty
 from robocup_launcher.srv import MessageParserSrv, MessageParserSrvResponse
+from robocup_launcher.srv import LabelDepositSrv, LabelDepositSrvResponse
 
 
 
@@ -30,7 +31,7 @@ class MessageParser():
         # Declare Services
         # --------------
         self.service = rospy.Service('message_parser', MessageParserSrv, self.serve_parsed_message)
-
+        self.serviceDeposit = rospy.Service('get_deposit', LabelDepositSrv, self.get_deposit_clbk)
 
         # Declare attributes
         self.person = "pending"
@@ -118,6 +119,23 @@ class MessageParser():
             return "undefined"
 
                
+    def get_deposit_clbk(self, req):
+        ld = LabelDepositSrvResponse()
+        ld.deposit = self.get_deposit(req.label)
+        return ld
+
+
+    # Get list of deposit locations from a darknet label
+    def get_deposit(self, darknet_label):
+        ycb_num = self.darknet_label_to_ycb_number[darknet_label]
+
+        if ycb_num in self.ycbNumObj_deposit.keys():
+            deposit = self.ycbNumObj_deposit[ycb_num]["Deposit"]
+        else:
+            deposit = []
+
+        return deposit
+
 
 
     # Load YCB label dictionnary
@@ -268,6 +286,87 @@ class MessageParser():
                 "mug"                   : 25
             }
 
+
+        self.ycbNumObj_deposit =    \
+            {
+                1:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                2:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                3:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                4:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                5:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                6:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                7:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                8:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                9:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                10:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                11:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                12:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                13:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                14:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                15:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                16:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                17:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+                18:{"Category":"food", "Deposit": ["Tray_A", "Tray_B"], "Place":["Long_Table_A"]},
+
+                19:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                20:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                21:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                22:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                23:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                24:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                25:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                26:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                27:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                28:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                29:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                30:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                31:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                32:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+                33:{"Category":"kitchenitem", "Deposit": ["Container_A"], "Place":["Long_Table_A"]},
+
+
+                38:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+
+
+                40:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+                41:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+
+
+                46:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+                47:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+                48:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+                49:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+                50:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+                51:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+                52:{"Category":"tool", "Deposit": ["Drawer_top", "Drawer_bottom"], "Place":["Drawer"]},
+                
+                53:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                54:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                55:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                56:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                57:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                58:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                59:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                60:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                61:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                62:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                63:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                62:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                63:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                64:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+                65:{"Category":"shapeitem", "Deposit": ["Drawer_left"], "Place":["Drawer"]},
+
+
+                70:{"Category":"taskitem", "Deposit": ["Bin_A"], "Place":["Bin_A"]},
+                71:{"Category":"taskitem", "Deposit": ["Bin_A"], "Place":["Bin_A"]},
+                72:{"Category":"taskitem", "Deposit": ["Bin_A"], "Place":["Bin_A"]},
+                73:{"Category":"taskitem", "Deposit": ["Bin_A"], "Place":["Bin_A"]},
+
+
+                76:{"Category":"taskitem", "Deposit": ["Bin_A"], "Place":["Bin_A"]},
+
+                77:{"Category":"taskitem", "Deposit": ["Bin_A"], "Place":["Bin_A"]}
+            }      
 
 
 

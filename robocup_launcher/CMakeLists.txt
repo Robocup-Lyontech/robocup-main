@@ -58,6 +58,7 @@ add_service_files(
   FILES
   MessageParserSrv.srv
   GraspingStateSrv.srv
+  LabelDepositSrv.srv
 )
 
 ## Generate actions in the 'action' folder

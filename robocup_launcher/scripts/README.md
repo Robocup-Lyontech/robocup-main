@@ -36,3 +36,20 @@ If you receive "pending" or -1, wait for receiving /message
 - `object_num`  
 - `object_darknet`
 
+
+`get deposit` with darknet `label` (string) in arg, and `deposit` (string) in output :  
+
+rosservice call /get_deposit "label: 'mustard'"   
+deposit: [Tray_A, Tray_B]  
+
+rosservice call /get_deposit "label: 'banana'"   
+deposit: [Tray_A, Tray_B]  
+
+rosservice call /get_deposit "label: 'nut'"   
+deposit: [Drawer_top, Drawer_bottom]  
+
+rosservice call /get_deposit "label: 'bolt'"   
+deposit: [Drawer_top, Drawer_bottom]  
+
+rosservice call /get_deposit "label: 'pitcher'"   
+deposit: [Container_A]  
